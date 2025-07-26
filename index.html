@@ -1,1 +1,83 @@
-<!doctype html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"><title>Nahyun Lee Homepage</title><script src="https://kit.fontawesome.com/e70a11badf.js" crossorigin="anonymous"></script><script defer="defer" src="/js/chunk-vendors.357db3c4.js"></script><script defer="defer" src="/js/app.c5a6cc1f.js"></script><link href="/css/app.35aa249d.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but myhomepage doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:image" content = "https://yourdomain.com/path-toimage.jpg" />
+    <title>Nahyun Lee - Web Developer</title>
+    
+    <!-- Google Fonts for better typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #000;
+        overflow-x: hidden;
+      }
+      
+      /* Loading animation */
+      #loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+      
+      .loader {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top: 3px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* Hide loading when loaded */
+      .loaded #loading {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-Bf0_Ye57.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CiBjz_1A.css">
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading">
+      <div class="loader"></div>
+    </div>
+    
+    <!-- React App Root -->
+    <div id="root"></div>
+    
+    <!-- Main Script -->
+    
+    <script>
+      // Hide loading screen when page loads
+      window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
+        setTimeout(() => {
+          document.getElementById('loading').style.display = 'none';
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
