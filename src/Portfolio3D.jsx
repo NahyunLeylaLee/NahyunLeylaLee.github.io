@@ -13,7 +13,7 @@ const Portfolio3D = () => {
 
   const homeInView = useInView(homeRef, { margin: "-10px 0px 0px 0px" });
   const aboutInView = useInView(aboutRef, { margin: "-10px 0px 0px 0px" });
-  const skillsInView = useInView(skillsRef, { margin: "200px 0px 0px 0px" });
+  const skillsInView = useInView(skillsRef, { margin: "-10px 0px 0px 0px" });
   const projectsInView = useInView(projectsRef, { margin: "-10px 0px 0px 0px"});
   const contactInView = useInView(contactRef, { margin: "-10px 0px 0px 0px" });
 
