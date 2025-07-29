@@ -18,12 +18,26 @@ const App = () => {
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
+  const refs = {
+    'home': homeRef,
+    'about': aboutRef,
+    'skills': skillsRef,
+    'projects': projectsRef,
+    'contact': contactRef,
+  };
 
   const homeInView = useInView(homeRef, defaultViewOption);
   const aboutInView = useInView(aboutRef, defaultViewOption);
   const skillsInView = useInView(skillsRef, defaultViewOption);
   const projectsInView = useInView(projectsRef, defaultViewOption);
   const contactInView = useInView(contactRef, defaultViewOption);
+  const views = [
+    { section: 'home', inView: homeInView },
+    { section: 'about', inView: aboutInView },
+    { section: 'skills', inView: skillsInView },
+    { section: 'projects', inView: projectsInView },
+    { section: 'contact', inView: contactInView },
+  ];
 
   // Mouse tracking for 3D effects
   useEffect(() => {
@@ -40,20 +54,12 @@ const App = () => {
 
   // Update active section based on scroll
   useEffect(() => {
-    if (homeInView)
-      setActiveSection('home');
-    else if (aboutInView)
-      setActiveSection('about');
-    else if (skillsInView)
-      setActiveSection('skills');
-    else if (projectsInView)
-      setActiveSection('projects');
-    else
-      setActiveSection('contact');
-  }, [homeInView, aboutInView, skillsInView, projectsInView, contactInView]);
+    const activeSection = views.find(({ inView }) => inView)?.section;
+    setActiveSection(activeSection);
+  }, [views]);
 
-  const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection = (section) => {
+    refs[section]?.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   // 3D transform calculations
@@ -61,7 +67,7 @@ const App = () => {
   const rotateY = useTransform(scrollYProgress, [0, 1], [0, 180]);
 
   const handleClick = (url) => {
-    window.open(url, '_black');
+    window.open(url, '_blank');
   };
 
   return (
@@ -296,7 +302,7 @@ const App = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <ProjectBox key={project.title} index={index} {...project} /> 
+              <ProjectBox key={project.title} index={index} {...project} handleClick={handleClick} />
             ))}
           </div>
         </div>

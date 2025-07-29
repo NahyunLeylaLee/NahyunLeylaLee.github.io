@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Badge from './badge';
 
-const ProjectBox = ({ index, id, color, icon, title, description, tech, live, github }) => {
+const ProjectBox = ({ index, id, color, icon, title, description, tech, live, github, handleClick }) => {
   return (
     <motion.div
       key={id}
