@@ -1,4 +1,4 @@
-import Portfolio3D from './Portfolio3D';
+import Portfolio3D from './portfolio-3d';
 
 function App() {
   return <Portfolio3D />
