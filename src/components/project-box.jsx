@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Badge from './badge';
 
-const ProjectBox = ({ index, id, color, icon, title, description, tech, live, github, handleClick }) => {
+const ProjectBox = ({ index, id, color, icon, title, description, tech, view, handleClick }) => {
   return (
     <motion.div
       key={id}
@@ -67,7 +67,7 @@ const ProjectBox = ({ index, id, color, icon, title, description, tech, live, gi
 
             <div className="flex gap-3">
               <motion.button
-                onClick={() => handleClick(live)}
+                onClick={() => handleClick(view)}
                 className="cursor-pointer flex-1 py-2 px-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg text-sm font-medium"
                 whileHover={{
                   scale: 1.02,
@@ -75,9 +75,9 @@ const ProjectBox = ({ index, id, color, icon, title, description, tech, live, gi
                 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Live Demo
+                View Project
               </motion.button>
-              <motion.button
+              {/* <motion.button
                 onClick={() => handleClick(github)}
                 className="cursor-pointer flex-1 py-2 px-4 border border-purple-500 rounded-lg text-sm font-medium text-purple-400 hover:bg-purple-600/10"
                 whileHover={{
@@ -88,7 +88,7 @@ const ProjectBox = ({ index, id, color, icon, title, description, tech, live, gi
                 whileTap={{ scale: 0.98 }}
               >
                 GitHub
-              </motion.button>
+              </motion.button> */}
             </div>
           </div>
         </div>

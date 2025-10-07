@@ -221,7 +221,7 @@ const App = () => {
                   transition: { duration: 0.3 }
                 }}
               >
-                Leyla
+                Nahyun
               </motion.div>
 
               {/* Floating elements around profile */}
@@ -251,7 +251,7 @@ const App = () => {
               viewport={{ once: true }}
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                I'm a passionate front-end and full-stack developer with 3 years of experience creating engaging,
+                I'm a passionate full-stack developer with 3 years of experience creating engaging,
                 user-friendly web applications. My journey in web development began with curiosity
                 and has evolved into expertise.
               </p>
@@ -333,7 +333,7 @@ const App = () => {
           </motion.p>
 
           <motion.div
-            className="grid md:grid-cols-3 gap-8 mb-12"
+            className="grid md:grid-cols-2 gap-8 mb-12"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -381,7 +381,7 @@ const App = () => {
           <motion.button
             style={{ zIndex: "10" }}
             className="cursor-pointer px-12 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold text-lg shadow-2xl"
-            onClick={() => handleClick('https://www.linkedin.com/in/nahyun-lee-6458a2113')}
+            onClick={() => handleClick('https://www.linkedin.com/in/lee-nahyun')}
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
